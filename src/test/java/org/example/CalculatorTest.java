@@ -15,9 +15,9 @@ public class CalculatorTest {
 
     @Test
     void add(){
-        double result = calculator.add(1.0, 2.1);
-        assertEquals(3.1, result );
+        double result = calculator.add(1.1, 2);
         double result2 = calculator.add(1.1, 90.0);
+        assertEquals(3.1, result );
         assertEquals(91.1, result2);
     }
 
@@ -30,16 +30,17 @@ public class CalculatorTest {
 
     @Test
     void multiply(){
-        Calculator calc = new Calculator();
-        assertEquals(10, calc.multiply(2,5));
-        assertEquals(100, calc.multiply(10, 10));
+        double result = calculator.multiply(2.2, 2);
+        double result2 = calculator.multiply(1.5, 2.0);
+        assertEquals(4.4, result);
+        assertEquals(3, result2);
     }
 
     @Test
     void divide(){
-        Calculator calc = new Calculator();
-        assertEquals(2, calc.divide(4, 2));
-        assertEquals(5, calc.divide(10, 2));
-        assertEquals(.5, calc.divide(1, 2));
+        double result = calculator.divide(15, 3);
+        double result2 = calculator.divide(16, 4);
+        assertEquals(5, result);
+        assertEquals(4, result2);
     }
 }
