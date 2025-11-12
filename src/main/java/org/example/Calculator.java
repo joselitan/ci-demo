@@ -6,7 +6,10 @@ public class Calculator {
         return a + b;
     }
 
-    public double subtract(double a, double b){
+    public double subtract(Double a, Double b) {
+        if (a == null || b == null) {
+            throw new IllegalArgumentException("Argument får inte vara null.");
+        }
         return a - b;
     }
 
@@ -19,5 +22,9 @@ public class Calculator {
             throw new IllegalArgumentException("Cannot divide by zero");
         }
         return a/b;
+    }
+
+    public int square(int a){
+        return a * a;
     }
 }

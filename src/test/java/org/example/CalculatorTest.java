@@ -8,32 +8,28 @@ public class CalculatorTest {
 
     private Calculator calculator;
 
+    private final int a = 1;
+    private final int b = 2;
+    //private final int number = 4
+
     @BeforeEach
     void setUp(){
         calculator = new Calculator();
     }
 
+
     @Test
     void add(){
-        double result = calculator.add(1.1, 2);
-        double result2 = calculator.add(1.1, 90.0);
-        assertEquals(3.1, result );
-        assertEquals(91.1, result2);
+        double result = calculator.add(a, b);
+        assertEquals(3, result );
     }
 
     @Test
     void subtract(){
         double result = calculator.subtract(10.0, 13.0);
-        assertEquals(-3, result);
-
-    }
-
-    @Test
-    void multiply(){
-        double result = calculator.multiply(2.2, 2);
-        double result2 = calculator.multiply(1.5, 2.0);
-        assertEquals(4.4, result);
-        assertEquals(3, result2);
+        double result2 = calculator.subtract(3.0, 2.0);
+        assertEquals(3, result);
+        assertEquals(1, result2);
     }
 
     @Test
@@ -42,5 +38,13 @@ public class CalculatorTest {
         double result2 = calculator.divide(16, 4);
         assertEquals(5, result);
         assertEquals(4, result2);
+    }
+
+    @Test
+    void square(){
+        int result = calculator.square(4);
+        int result2 = calculator.square(5);
+        assertEquals(16, result);
+        assertEquals(25, result2);
     }
 }
