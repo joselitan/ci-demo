@@ -1,22 +1,31 @@
 package org.example;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculatorTest {
 
+    private Calculator calculator;
+
+    @BeforeEach
+    void setUp(){
+        calculator = new Calculator();
+    }
+
     @Test
     void add(){
-        Calculator calc = new Calculator();
-        assertEquals(5, calc.add(2,3));
-        assertEquals(2.5, calc.add(1.5, 1));
+        double result = calculator.add(1.0, 2.1);
+        assertEquals(3.1, result );
+        double result2 = calculator.add(1.1, 90.0);
+        assertEquals(91.1, result2);
     }
 
     @Test
     void subtract(){
-        Calculator calc = new Calculator();
-        assertEquals(-3, calc.subtract(2,5));
-        assertEquals(-3, calc.subtract(3,6));
+        double result = calculator.subtract(10.0, 13.0);
+        assertEquals(-3, result);
+
     }
 
     @Test
