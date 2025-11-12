@@ -28,7 +28,7 @@ public class CalculatorTest {
     void subtract(){
         double result = calculator.subtract(10.0, 13.0);
         double result2 = calculator.subtract(3.0, 2.0);
-        assertEquals(3, result);
+        assertEquals(-3, result);
         assertEquals(1, result2);
     }
 
