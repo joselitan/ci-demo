@@ -8,8 +8,8 @@ public class CalculatorTest {
 
     private Calculator calculator;
 
-    private final int a = 1;
-    private final int b = 2;
+    //private final int a = 1;
+    //private final int b = 2;
     //private final int number = 4
 
     @BeforeEach
@@ -20,7 +20,7 @@ public class CalculatorTest {
 
     @Test
     void add(){
-        double result = calculator.add(a, b);
+        double result = calculator.add(1, 2);
         assertEquals(3, result );
     }
 
@@ -46,5 +46,6 @@ public class CalculatorTest {
         int result2 = calculator.square(5);
         assertEquals(16, result);
         assertEquals(25, result2);
+        //test
     }
 }
