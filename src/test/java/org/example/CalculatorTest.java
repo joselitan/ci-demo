@@ -72,6 +72,6 @@ public class CalculatorTest {
         int result2 = calculator.square(b);
         assertEquals(100, result);
         assertEquals(4, result2);
-        //test
+
     }
 }
