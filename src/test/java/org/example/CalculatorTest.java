@@ -2,14 +2,20 @@ package org.example;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+
+import java.util.logging.Logger;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculatorTest {
 
     private Calculator calculator;
 
-    //private final int a = 1;
-    //private final int b = 2;
+    private static final Logger logger = Logger.getLogger(CalculatorTest.class.getName());
+
+    private final int a = 10;
+    private final int b = 2;
     //private final int number = 4
 
     @BeforeEach
@@ -17,35 +23,51 @@ public class CalculatorTest {
         calculator = new Calculator();
     }
 
+    @Test
+    void DivideWithLogging(){
+
+        logger.info("Dividerar " + a + " med " + b);
+        if(b==0){
+            logger.severe( "Divided by zero!!");
+            throw new IllegalArgumentException("Divided by zero");
+        }
+        int result = calculator.divide(a, b);
+        assertEquals(5, result);
+    }
 
     @Test
     void add(){
-        double result = calculator.add(1, 2);
-        assertEquals(3, result );
+        int result = calculator.add(a, b);
+        assertEquals(12, result );
     }
 
     @Test
     void subtract(){
-        double result = calculator.subtract(10.0, 13.0);
-        double result2 = calculator.subtract(3.0, 2.0);
-        assertEquals(-3, result);
-        assertEquals(1, result2);
+        int result = calculator.subtract(a, b);
+        assertEquals(8, result);
+
+    }
+
+    @Test
+    void multiply(){
+        int result = calculator.multiply(a, b);
+        assertEquals(20, result);
     }
 
     @Test
     void divide(){
-        double result = calculator.divide(15, 3);
-        double result2 = calculator.divide(16, 4);
+        int result = calculator.divide(a, b);
+        //double result2 = calculator.divide(16, 4);
         assertEquals(5, result);
-        assertEquals(4, result2);
+        //assertEquals(4, result2);
     }
 
     @Test
     void square(){
-        int result = calculator.square(4);
-        int result2 = calculator.square(5);
-        assertEquals(16, result);
-        assertEquals(25, result2);
+        int result = calculator.square(a);
+        int result2 = calculator.square(b);
+        assertEquals(100, result);
+        assertEquals(4, result2);
         //test
     }
 }

@@ -1,23 +1,23 @@
 package org.example;
 
 public class Calculator {
-    public double add(double a, double b){
+    public int add(int a, int b){
 
         return a + b;
     }
 
-    public double subtract(Double a, Double b) {
+    public int subtract(Integer a, Integer b) {
         if (a == null || b == null) {
             throw new IllegalArgumentException("Argument får inte vara null.");
         }
         return a - b;
     }
 
-    public double multiply(double a, double b){
+    public int multiply(int a, int b){
         return a * b;
     }
 
-    public double divide(double a, double b){
+    public int divide(Integer a, Integer b){
         if (b == 0){
             throw new IllegalArgumentException("Cannot divide by zero");
         }
