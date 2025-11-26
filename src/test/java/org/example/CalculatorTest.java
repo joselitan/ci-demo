@@ -37,12 +37,14 @@ public class CalculatorTest {
 
     @Test
     void add(){
+        logger.info("Adderar " + a + " med " + b);
         int result = calculator.add(a, b);
         assertEquals(12, result );
     }
 
     @Test
     void subtract(){
+        logger.info("Substraherar " + a + " med " + b);
         int result = calculator.subtract(a, b);
         assertEquals(8, result);
 
@@ -50,20 +52,22 @@ public class CalculatorTest {
 
     @Test
     void multiply(){
+        logger.info("Multiplicerar " + a + " med " + b);
         int result = calculator.multiply(a, b);
         assertEquals(20, result);
     }
 
     @Test
     void divide(){
+        logger.info("Dividerar " + a + " med " + b);
         int result = calculator.divide(a, b);
-        //double result2 = calculator.divide(16, 4);
         assertEquals(5, result);
-        //assertEquals(4, result2);
+
     }
 
     @Test
     void square(){
+
         int result = calculator.square(a);
         int result2 = calculator.square(b);
         assertEquals(100, result);
